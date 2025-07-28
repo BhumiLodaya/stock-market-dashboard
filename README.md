@@ -1,4 +1,4 @@
-📊 Stock Market Dashboard with MySQL & Dash
+#📊 Stock Market Dashboard with MySQL & Dash
 An interactive and dynamic stock market dashboard built using Plotly Dash, Pandas, and MySQL, designed to provide insightful visualizations of stock performance across sectors, tickers, and time ranges.
 
 <br/>
