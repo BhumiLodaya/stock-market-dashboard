@@ -1,125 +1,105 @@
-#📊 Stock Market Dashboard with MySQL & Dash
-An interactive and dynamic stock market dashboard built using Plotly Dash, Pandas, and MySQL, designed to provide insightful visualizations of stock performance across sectors, tickers, and time ranges.
+# 📈 Stock Market Dashboard – June 2025
 
-<br/>
-📁 Project Structure
-graphql
-Copy
-Edit
-stock-dashboard/
-│
-├── graph.py                    # Main Dash app file
-├── insert_stocks_to_mysql.py  # Loads CSV data into MySQL
-├── stock_market_june2025.csv  # Cleaned stock market dataset
-├── README.md                   # Project documentation
-🚀 Features
-✅ Real-Time Visualizations:
-Line graph for closing price trends of selected tickers and sectors
+This project is a full-fledged stock market dashboard built using Python's Dash framework. It allows you to visualize stock performance by sector, ticker, and date, with data stored in a MySQL database.
 
-Sector-wise stock price comparison
+## 📂 Files Included
 
-Pie chart showing sector contributions to total market cap
+| File | Description |
+|------|-------------|
+| `graph.py` | Main Dash dashboard with stock visualizations |
+| `insert_stock_to_mysql.py` | Script to insert data from the CSV to MySQL |
+| `stock_market_june2025.csv` | Raw stock market dataset used for MySQL |
 
-High vs. Low price comparison across selected tickers and dates
+---
 
-Auto-adaptive visuals when:
+## 🚀 Features
 
-Only sector is selected
+- Visualize sector-wise stock performance  
+- Custom date and ticker comparisons  
+- MySQL-powered backend  
+- Interactive Dash and Plotly visualizations  
 
-No ticker/date is chosen
+---
 
-Multiple tickers selected
+## 🛠️ How to Run
 
-✅ Smart Filtering:
-Dropdown filters for Sector, Ticker, and Date
+### 1. Clone the Repository
+bash
+git clone https://github.com/your-username/stock-market-dashboard.git
+cd stock-market-dashboard
 
-Automatically handles missing or unordered dates
 
-Dynamically adjusts visual content depending on filter combinations
-
-✅ MySQL Backend:
-Dataset is stored in a MySQL database
-
-Efficient querying and data fetching for scalable performance
-
-Python script auto-creates the table and inserts data
-
-💾 Setup Instructions
-1️⃣ Clone the Repo
+### 2.Install Requirements
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/stock-dashboard.git
-cd stock-dashboard
-2️⃣ Install Required Packages
+pip install -r requirements.txt
+
+
+### 3. Configure MySQL
+Create a database in MySQL (e.g., stock_db)
+
+Update DB credentials in insert_stock_to_mysql.py and graph.py
+
+
+### 4. Insert Data into MySQL
 bash
 Copy
 Edit
-pip install pandas plotly dash mysql-connector-python sqlalchemy
-3️⃣ Set Up MySQL
-Create a database in MySQL:
+python insert_stock_to_mysql.py
 
-sql
-Copy
-Edit
-CREATE DATABASE stock_dashboard_db;
-Update your MySQL credentials in insert_stocks_to_mysql.py:
 
-python
-Copy
-Edit
-DB_USER = "root"
-DB_PASSWORD = "your_password"
-DB_HOST = "localhost"
-DB_NAME = "stock_dashboard_db"
-4️⃣ Load Data into MySQL
-bash
-Copy
-Edit
-python insert_stocks_to_mysql.py
-5️⃣ Run the Dashboard
+### 5. Run the Dashboard
 bash
 Copy
 Edit
 python graph.py
-Open your browser and navigate to http://127.0.0.1:8050
+The dashboard will open in your browser at http://127.0.0.1:8050/.
 
-📂 Dataset
-Filename: stock_market_june2025.csv
+<details>
+<summary>Click to view MySQL table structure</summary>
 
-Fields:
+sql
+CREATE TABLE stocks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ticker VARCHAR(10),
+    sector VARCHAR(100),
+    date DATE,
+    open_price FLOAT,
+    close_price FLOAT,
+    high_price FLOAT,
+    low_price FLOAT,
+    volume INT
+);
 
-Ticker
+### ✅ Tech Stack (at a glance)
+Give a quick summary of tools used.
 
-Date
+markdown
+Copy
+Edit
+## 🧰 Tech Stack
 
-Open Price
+- **Frontend**: Dash, Plotly
+- **Backend**: Python, MySQL
+- **Data Handling**: Pandas
 
-Close Price
+### ✅ Author & Acknowledgments
 
-High
+## 👤 Author
 
-Low
+**Bhumi Paresh Lodaya**  
+B.Tech in Computer Science  
+Data Science & Cybersecurity Enthusiast
 
-Volume
+---
 
-Sector
+## 🙏 Acknowledgements
 
-Market Cap
+- [Plotly Dash Documentation](https://dash.plotly.com/)
+- [MySQL Docs](https://dev.mysql.com/doc/)
+- 
 
-📈 Future Improvements
-Add prediction of future stock prices using ML
+## 📝 License
 
-Live stock API integration (e.g., Alpha Vantage, Yahoo Finance)
-
-User login & session history
-
-Export chart as PDF or PNG
-
-🙋‍♀️ Author
-👤 Bhumi Lodaya
-📧 bhumilodaya23@gmail.com
-📎 Interested in Data Science, Cybersecurity & Intelligent Dashboards
-
-🏷️ License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
